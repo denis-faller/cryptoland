@@ -1,0 +1,133 @@
+@font-face {
+    font-family: Gilroy-Light;
+    src: url(../fonts/Gilroy-Light.otf); 
+}
+body {
+    font-family: Catamaran, sans-serif!important;
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px!important;
+    line-height: 1.65!important;
+}
+.logo-img{
+    background-image: url(../img/Logo_white.svg);
+    width: 45px;
+    height: 51px;
+    background-size: contain;
+    float: left;
+}
+.logo{
+    font-family: Gilroy-Light!important;
+    font-weight: 400;
+    font-size: 30px;
+    color: #fff;
+    float: left;
+    width: 23%;
+}
+.header{
+    background-image: url(../img/1.png);
+    width: 100%;
+    height: 871px;
+    display: flex;
+}
+.menu {
+    margin: 0;
+    padding: 4px;
+    float: left;
+}
+.menu li{
+    display: inline;
+    margin-right: 5px;
+    padding: 3px;
+}
+.menu li a{
+    display: inline;
+    margin-left: 35px;
+    float: left;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.menu li a:after {
+    display: block;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    content: "";
+    transition: width 0.3s ease-out;
+}
+
+.menu li a:hover:after,
+.menu li a:focus:after {
+    width: 100%;
+}
+.logo-wrap{
+    transition: opacity 0.3s ease-in-out;
+}
+.logo-wrap:hover{
+    opacity: 0.5;
+}
+.switch-locale{
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    float: right;
+    margin-right: 12%!important;
+    transition: opacity 0.3s ease-in-out;
+}
+.switch-locale:after{
+    background-image: url(../img/down-chevron.svg);
+    background-size: 10px 6px;
+    background-repeat: no-repeat;
+    content: "";
+    width: 10px;
+    height: 6px;
+    position: absolute;
+    margin: 8px 0 0 5px;
+}
+.switch-locale:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+.switch-locale.active:after{
+    transform: rotateX(-180deg);
+    opacity: .5;
+}
+.locale-list{
+    display: none;
+    float: right;
+    position: relative;
+    left: 2%;
+    top: 4%;
+    background-color: #fff;
+    color: grey;
+}
+.locale-list.active{
+    display: block;
+}
+.locale-list ul {
+    list-style-type: none;
+    padding: 15px;
+}
+.locale-list ul li{
+    padding: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+}
+.locale-list ul li:hover{
+    opacity: 0.5;
+}
+.locale-list:before{
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 0 solid transparent;
+    border-bottom: 10px solid #fff;
+}
