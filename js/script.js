@@ -18,5 +18,7 @@ $(document).ready(function(){
         $(".wrap-burger").toggleClass("active");
         $(".btn-close").toggleClass("active");
         $(".wrapper").toggleClass("active");
+        $("header").toggleClass("active");
+        $(".header").toggleClass("active");
     });
 });
