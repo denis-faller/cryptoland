@@ -30,12 +30,24 @@ body {
     height: 871px;
     display: flex;
 }
+.header-row{
+   justify-content: space-between;
+}
+header{
+    z-index: 999;
+}
+.wrap-menu{
+    display: flex;
+    justify-content: center;
+}
 .menu {
+    display: flex;
     margin: 0;
     padding: 4px;
     float: left;
 }
 .menu li{
+    white-space: nowrap;
     display: inline;
     margin-right: 5px;
 }
@@ -62,13 +74,18 @@ body {
 .menu li a:focus:after {
     width: 100%;
 }
+.logo-wrap{
+    display: flex;
+}
 .logo-wrap a{
+    display: flex;
     transition: opacity 0.3s ease-in-out;
 }
 .logo-wrap a:hover{
     opacity: 0.5;
 }
 .switch-locale{
+    right: 25px;
     top: 5px;
     vertical-align: top;
     display: inline-block;
@@ -98,8 +115,8 @@ body {
 }
 .locale-list{
     top: 40px;
-    right: 45px;
-    position: relative;
+    right: 200px;
+    position: absolute;
     vertical-align:top;
     display: inline-block;
     opacity: 0;
@@ -134,6 +151,7 @@ body {
     border-bottom: 10px solid #fff;
 }
 .join-button{
+    bottom: 15px;
     height: 55px;
     display: inline-block;
     position: relative;
@@ -158,23 +176,60 @@ body {
     text-decoration: none;
 }
 .wrap-buttons{
-    display: flex;
     text-align: right;
-    margin-left: 5%;
 }
-@media(max-width: 720px){
+.promo{
+    z-index: 1;
+}
+header.active .logo-img{
+    background-image: url(../img/Logog_blue.svg);
+}
+.logo-img{
+    background-image: url(../img/Logo_white.svg);
+}
+header .logo, header .menu a{
+    transition: color 0.3s ease-in-out;
+}
+header.active .logo, header.active .menu a{
+    color: grey;
+}
+header.active .menu li{
+    display: block;
+}
+header{
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+header.active{
+    background-color: #fff;
+}
+header .switch-locale{
+    transition: color 0.3s ease-in-out;
+}
+header.active .switch-locale, header.active .locale-list{
+    color: grey;
+}
+header.active .switch-locale:after{
+    background-image: url(../img/down-chevron-grey.svg);
+}
+@media(max-width: 1350px){
+    header{
+        height: 100px;
+    }
     .logo-img{
         margin-left: 0%!important;
         transition: background-image 0.3s ease-in-out;
     }
     .menu-burger-header {
+        z-index: 999;
+        cursor: pointer;
         position: relative; 
         width: 30px;
         height: 30px;
         display: block;
-        left: 50%;
-        top: 2%;
-        float: left;
+    }
+    .wrap-burger:after, .wrap-burger:before{
+        content: '';
     }
     .wrap-burger span, .wrap-burger:after, .wrap-burger:before{
         height: 3px;
@@ -186,19 +241,16 @@ body {
     .wrap-burger span{
         top: 10px;
     }
-    .wrap-burger:after, .wrap-burger:before{
-        content: '';
-    }
     .wrap-burger:after{
         bottom: 8px;
     }
     .wrap-burger:before{
         top: 2px;
     }
-    .wrap-menu{
+    .menu{
         display: none;
     }
-    .wrap-menu.active{
+    .wrap-menu.active .menu{
         display: block;
     }
     .btn-close{
@@ -219,35 +271,6 @@ body {
     .btn-close svg path {
         fill: #777;
     }
-    header.active .logo-img{
-        background-image: url(../img/Logog_blue.svg);
-    }
-    .logo-img{
-        background-image: url(../img/Logo_white.svg);
-    }
-    .wrapper{
-        display: block;
-    }
-    .wrapper.active{
-        display: none;
-    }
-    
-    header .logo, header .menu a{
-        transition: color 0.3s ease-in-out;
-    }
-    header.active .logo, header.active .menu a{
-        color: grey;
-    }
-    header.active .menu li{
-        display: block;
-    }
-    header{
-        background-color: transparent;
-        transition: background-color 0.3s ease-in-out;
-    }
-    header.active{
-        background-color: #fff;
-    }
     .cl{
         clear: left;
     }
@@ -255,16 +278,9 @@ body {
         margin-top: 8%;
         margin-left: 4%;
     }
-    header .switch-locale{
-        transition: color 0.3s ease-in-out;
-    }
     header.active .switch-locale, header.active .locale-list{
-        color: grey;
         margin-top: 8%;
         margin-left: 4%;
-    }
-    .switch-locale:after{
-        background-image: url(../img/down-chevron-grey.svg);
     }
     .switch-locale:hover{
         opacity: 1;
@@ -289,13 +305,19 @@ body {
         z-index: 1;
         opacity: 1;
     }
-    .header.active{
-        height: 500px;
-    }
     header.active .join-button{
         position: absolute;
         bottom: 0;
         left: 18%;
+    }
+    .wrap-buttons{
+        display: none;
+    }
+    .wrap-menu{
+        justify-content: flex-end;
+    }
+    header.open{
+        height: 100%;
     }
 }
 .btn-close{

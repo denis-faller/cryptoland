@@ -17,8 +17,14 @@ $(document).ready(function(){
         $(".wrap-menu").toggleClass("active");
         $(".wrap-burger").toggleClass("active");
         $(".btn-close").toggleClass("active");
-        $(".wrapper").toggleClass("active");
-        $("header").toggleClass("active");
-        $(".header").toggleClass("active");
+        $("header").toggleClass("open");
     });
+     $(window).on('scroll', function(){
+        if(!$("header").hasClass("active")){
+            $("header").addClass("active");
+        }
+        else if($(window).scrollTop() == 0){
+            $("header").removeClass("active");
+        }
+     });
 });
