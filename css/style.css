@@ -163,6 +163,7 @@ header{
     font-weight: 400;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
+    min-width: 170px;
 }
 .join-button:hover{
     background-color: #2ADD82;
@@ -211,6 +212,9 @@ header.active .switch-locale, header.active .locale-list{
 }
 header.active .switch-locale:after{
     background-image: url(../img/down-chevron-grey.svg);
+}
+.wrap-menu-burger-header, .break{
+    display: none;
 }
 @media(max-width: 1350px){
     header{
@@ -306,18 +310,44 @@ header.active .switch-locale:after{
         opacity: 1;
     }
     header.active .join-button{
-        position: absolute;
         bottom: 0;
-        left: 18%;
     }
     .wrap-buttons{
         display: none;
     }
     .wrap-menu{
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
     header.open{
         height: 100%;
+    }
+    header.active .wrap-burger span, header.active .wrap-burger:after, header.active .wrap-burger:before{
+        background-color:grey;
+    }
+    .wrap-menu-burger-header{
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+        display: flex;
+    }
+    header.open .header-row{
+        flex-direction: column;
+    }
+    header.open .wrap-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 50px;
+    }
+    header.open .switch-locale{
+        right: 0;
+    }
+    header.open .locale-list{
+        left: 0;
+        right: inherit;
+    }
+    header.open .join-button{
+        margin-top: 30px;
     }
 }
 .btn-close{
