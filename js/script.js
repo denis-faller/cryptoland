@@ -37,4 +37,13 @@ $(document).ready(function(){
         $(".switch-locale").toggleClass("active");
         $(".locale-list").toggleClass("active");
     });
+    let clock;
+
+    clock = $('.clock').FlipClock({
+        clockFace: 'DailyCounter',
+	countdown: true
+    });
+    clock.setTime(3600 * 24 * 3);
+    clock.setCountdown(true);
+    clock.start();
 });
