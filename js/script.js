@@ -37,6 +37,13 @@ $(document).ready(function(){
         $(".switch-locale").toggleClass("active");
         $(".locale-list").toggleClass("active");
     });
+    $(".scroll-link").on('click', function(){
+        let elementClick = $(this).attr("href");
+        let destination = $(elementClick).offset().top;
+        $("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 800);
+        return false;
+    });
+    
     let clock;
 
     clock = $('.clock').FlipClock({
@@ -46,4 +53,8 @@ $(document).ready(function(){
     clock.setTime(3600 * 24 * 3);
     clock.setCountdown(true);
     clock.start();
+    
+    AOS.init({
+        once: true
+    });
 });
