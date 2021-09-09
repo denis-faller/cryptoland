@@ -337,13 +337,15 @@ h1 span{
     justify-content: center;
     margin-top: 30px;
 }
-.pay-systems ul, .rankings ul {
+.pay-systems ul, .rankings div {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 0;
     padding: 4px;
     float: left;
 }
-.pay-systems ul li, .rankings ul li {
+.pay-systems ul li, .rankings div div {
     white-space: nowrap;
     display: inline;
     margin-right: 15px;
@@ -366,10 +368,14 @@ h1 span{
     -khtml-border-radius: 50%;
     cursor: pointer;
 }
+#ranking{
+    display: block;
+    height: 1px;
+}
 .rankings{
     margin-top: 100px;
 }
-.rankings ul li {
+.rankings div div {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -389,7 +395,10 @@ h1 span{
     color: #313b77;
 }
 .rating{
-    margin: 0 auto!important;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 0;
 }
 .rating li{
     display: inline!important;
@@ -410,15 +419,22 @@ h4{
     color: #00c3e2!important;
     text-transform: uppercase!important;
 }
-.about-economy{
+.about-economy, .about-ico{
     display: flex;
     justify-content: center;
+}
+.about-ico{
+   margin-top: 150px; 
 }
 .about-economy img{
     width: 558px;
     height: 448px;
 }
-.about-economy h4:before {
+.about-ico img{
+    width: 607px;
+    height: 479px;
+}
+.about-economy h4:before, .about-ico h4:before {
     position: absolute;
     content: "";
     top: 50%;
@@ -429,39 +445,104 @@ h4{
     left: 0;
     border-bottom: 1px solid #00c3e2;
 }
-.about-economy h4{
+.about-economy h4, .about-ico h4{
     padding-left: 50px;
 }
-.content-about-economy{
+.content-about-economy, .content-about-ico{
     width: 540px;
 }
-.content-about-economy h2{
+.content-about-economy h2, .content-about-ico h2{
     color: #313b77;
     font-weight: 700;
     font-size: 40px;
     font-family: Raleway;
 }
-.content-about-economy h2 span{
+.content-about-economy h2 span, .content-about-ico h2 span{
+    display: block;
     color: #313b77;
     font-weight: 100;
     font-size: 40px;
     line-height: 45px;
-    white-space: nowrap;
 }
-.content-about-economy p{
+.content-about-economy p, .content-about-ico p{
     margin-top: 30px;
     font-family: Catamaran, sans-serif;
     color: rgb(119, 119, 119);
     font-size: 18px;
-    font-weight: 300;
-    
+    font-weight: 400;
+}
+.content-about-economy ul, .content-about-ico ul{
+    margin-top: 30px;
+    padding-left: 0px;
 }
 .content-about-economy .features li{
     list-style-image: url(../img/check.svg);
     color: #777;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+.content-about-ico .features-theme li{
+    position: relative;
+    list-style-type: none;
+    padding-left: 20px;
+    color: #777;
+    margin-top: 15px;
+}
+.content-about-ico .features-theme li:before{
+    content: '';
+    position: absolute;
+    top: 11px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background-color: #0009b2;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
 .content-about-economy .features span{
     font-weight: 700;
+}
+.stat{
+    position: relative;
+    margin-top: 380px;
+    background-image: url(../img/stat-bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 646px;
+}
+.stat img{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 550px;
+    margin: auto;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    height: auto;
+}
+.play{
+    background-image: url(../img/play.svg);
+    background-repeat: no-repeat;
+    background-size: 28px 33px;
+    background-position: 55% 50%;
+    width: 92px;
+    height: 92px;
+    box-shadow: 0 0 21px rgb(0 214 229 / 79%);
+    background-color: #00c3e2;
+    border-radius: 50px;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.mfp-wrap {
+    height: 0%!important;
 }
 @media(max-width: 1350px){
     header{
@@ -587,17 +668,27 @@ h4{
     .btn-close svg path {
         fill: #777;
     }
+    .rankings div div{
+        margin: 20px;
+    }
 }
 @media(max-width: 1100px){
-    .about-economy{
+    .about-economy, .about-ico{
         flex-direction: column;
-    }
-    .about-economy{
         margin-left: 10%;
     }
-    .content-about-economy{
+    .content-about-economy, .content-about-ico{
         width: 90%;
         margin-top: 40px;
+    }
+    .content-about-ico{
+        order: 2;
+    }
+    .about-ico img{
+        order: 1;
+    }
+    .stat{
+        margin-top: 180px;
     }
 }
 @media(max-width: 768px){
@@ -605,10 +696,10 @@ h4{
         flex-direction: column;
         align-items: center;
     }
-    .about-economy{
+    .about-economy, .about-ico{
         margin-left: 7%;
     }
-    .content-about-economy h2, .content-about-economy h2 span{
+    .content-about-economy h2, .content-about-economy h2 span, .content-about-ico h2, .content-about-ico h2 span{
         font-size: 30px;
     }
 }
@@ -628,7 +719,7 @@ h4{
         width: 90%;
         margin: 5px 10px 5px 10px;
     }
-    .about-economy img{
+    .about-economy img, .about-ico img{
         width: 90%;
         height: 90%;
     }

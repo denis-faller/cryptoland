@@ -54,6 +54,25 @@ $(document).ready(function(){
     clock.setCountdown(true);
     clock.start();
     
+    $('.popup-youtube').magnificPopup({
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+    });
+    $.extend(true, $.magnificPopup.defaults, {  
+        iframe: {
+            patterns: {
+               youtube: {
+                  index: 'youtube.com/', 
+                  id: 'v=', 
+                  src: 'http://www.youtube.com/embed/%id%?autoplay=1' 
+              }
+            }
+        }
+    });
+    
     AOS.init({
         once: true
     });
