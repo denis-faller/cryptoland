@@ -76,4 +76,9 @@ $(document).ready(function(){
     AOS.init({
         once: true
     });
+    
+    $('.counter').countUp({
+        'time': 2000,
+        'delay': 20
+    });
 });
