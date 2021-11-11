@@ -81,4 +81,28 @@ $(document).ready(function(){
         'time': 2000,
         'delay': 20
     });
+    
+    $('.jarallax').jarallax({
+        speed: 0.6
+    });
+    
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            datasets: [
+              {
+                label: 'Dataset 1',
+                data: [1, 2, 3, 4],
+                backgroundColor: ['#FF3A24', '#00CC0E', '#0009B2', '#00B1CC'],
+              }
+            ]
+          },
+        options: {
+            responsive: true,
+            cutout: 190,
+            radius: 180,
+            borderWidth: 0
+        },
+    });
 });

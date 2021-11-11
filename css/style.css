@@ -369,7 +369,7 @@ h1 span{
 .buy-tokens:hover, .contribute-button:hover{
     background-color: #FF3F75;
 }
-.white-pappers:hover, .join-ico:hover{
+.white-pappers:hover, .join-ico:hover, .tokens-market .buy-tokens:hover{
     background-color: #2DDFD1;
 }
 .pay-systems, .rankings{
@@ -616,10 +616,10 @@ h2{
 .services img{
     position: absolute;
 }
-.services-content, .answers-content, .roadmap-content, .documents-content, .tokens-market-content{
+.services-content, .answers-content, .roadmap-content, .documents-content, .tokens-market-content, .about-us-content{
     padding-top: 150px;
 }
-.services h4, .services h2, .answers h4, .answers h2, .roadmap-content h4, .roadmap-content h2, .documents-content h4, .documents-content h2{
+.services h4, .services h2, .answers h4, .answers h2, .roadmap-content h4, .roadmap-content h2, .documents-content h4, .documents-content h2, .about-us-content h4, .about-us-content h2{
     text-align: center;
 }
 .service-wrap{
@@ -676,7 +676,7 @@ h2{
     font-family: Catamaran,sans-serif;
     color: #777;
 }
-.join-ico{
+.join-ico, .tokens-market .buy-tokens{
     width: 180px;
 }
 .statistic{
@@ -811,7 +811,7 @@ h2{
     width: 100%;
     height: 100%;
 }
-.roadmap h2, .roadmap-header, .roadmap-date, .roadmap-body{
+.roadmap h2, .roadmap-header, .roadmap-date, .roadmap-body, .about-us h2{
     color: #fff!important;
 }
 .roadmap h2 span, .documents h2 span{
@@ -955,12 +955,80 @@ h2{
     letter-spacing: -.4px;
     color: #333;
 }
-.tokens-market img{
-    float: left;
+.tokens-market{
+    position: relative;
+}
+.tokens-market-background{
+    position: absolute;
 }
 .tokens-market-content{
-    display: inline-block;
     margin-left: 50px;
+}
+.tokens-market-table{
+    margin-top: 50px;
+}
+.tokens-market-row:nth-child(odd)  .tokens-market-col{
+    background-color: #F8FAFF;
+}
+.tokens-market-row:first-of-type{
+    margin-top: 50px;
+}
+.tokens-market-col:first-child {
+    font-size: 18px;
+    font-family: Raleway;
+    color: #345;
+    font-weight: 700;
+    padding: 18px 22px 18px 22px;
+}
+.tokens-market-col:last-child {
+    padding: 18px 22px 18px 0;
+    color: #777;
+}
+.tokens-market .buy-tokens{
+    background-color: #00c3e2;
+    box-shadow: 0 3px 12px #2DDFD1;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+.bg-el-1 {
+    position: absolute;
+    top: 5%;
+    right: 20%;
+}
+.bg-el-2 {
+    position: absolute;
+    bottom: -20%;
+    left: 10%;
+}
+.bg-el-3 {
+    position: absolute;
+    top: 64%;
+    right: 18%;
+}
+.bg-el-4{
+    position: absolute;
+    top: 90%;
+    left: 20%;
+}
+.about-us{
+    margin-top: 100px;
+    background-image: url("../img/6.png");
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.about-us h2{
+    font-weight: 400!important;
+}
+.about-us h2 span{
+    font-weight: 800!important;
+}
+@media(max-width: 1450px){
+    .tokens-market-background{
+        left: -240px;
+    }
 }
 @media(max-width: 1350px){
     header{
@@ -1098,6 +1166,9 @@ h2{
     .services img{
         right: 400px;
     }
+    .tokens-market-background{
+        left: -340px;
+    }
 }
 @media(max-width: 1100px){
     .about-economy, .about-ico{
@@ -1123,7 +1194,7 @@ h2{
     .roadmap{
         height: auto;
     }
-    .roadmap-content h2{
+    .roadmap-content h2, .about-us h2{
         font-size: 30px!important;  
     }
     .roadmap-row{
@@ -1196,6 +1267,12 @@ h2{
     }
     .roadmap-row{
         flex-direction: column;
+    }
+    .tokens-market-background{
+        display: none;
+    }
+    .tokens-market-table{
+        margin: 0 50px;
     }
 }
 @media(max-width: 768px){
