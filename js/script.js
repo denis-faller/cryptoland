@@ -92,17 +92,35 @@ $(document).ready(function(){
         data: {
             datasets: [
               {
-                label: 'Dataset 1',
-                data: [1, 2, 3, 4],
-                backgroundColor: ['#FF3A24', '#00CC0E', '#0009B2', '#00B1CC'],
+                label: 'Dataset',
+                data: [40, 15, 10, 20],
+                backgroundColor: ['#00B1CC', '#0009B2', '#00CC0E', '#FF3A24'],
               }
+            ],
+            labels: [
+                "Light blue",
+                "Dark blue",
+                "Green",
+                "Red",
             ]
           },
         options: {
             responsive: true,
-            cutout: 190,
-            radius: 180,
-            borderWidth: 0
+            cutout: "90%",
+            borderWidth: 0,
+            plugins: {
+                legend: {
+                    display: false
+              }
+            }
         },
+    });
+    
+    $(".accordion a").on('click', function(){
+        $(".accordion-link.active").removeClass("active");
+        $(".accordion-text.active").slideUp();
+        $(this).addClass("active");
+        $(this).next('p').slideToggle();
+        $(this).next('p').addClass("active");
     });
 });

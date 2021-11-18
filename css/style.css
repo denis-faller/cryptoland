@@ -616,10 +616,11 @@ h2{
 .services img{
     position: absolute;
 }
-.services-content, .answers-content, .roadmap-content, .documents-content, .tokens-market-content, .about-us-content{
+.services-content, .answers-content, .roadmap-content, .documents-content, .tokens-market-content, .about-us-content, .faq{
     padding-top: 150px;
 }
-.services h4, .services h2, .answers h4, .answers h2, .roadmap-content h4, .roadmap-content h2, .documents-content h4, .documents-content h2, .about-us-content h4, .about-us-content h2{
+.services h4, .services h2, .answers h4, .answers h2, .roadmap-content h4, .roadmap-content h2, .documents-content h4, .documents-content h2, .about-us-content h4, .about-us-content h2,
+.faq h4, .faq h2{
     text-align: center;
 }
 .service-wrap{
@@ -1025,6 +1026,103 @@ h2{
 .about-us h2 span{
     font-weight: 800!important;
 }
+.distribution-wrap{
+    margin-top: 100px;
+}
+.chart-wrap{
+    width: 360px;
+    height: 360px;
+}
+.about-us-total-sum{
+    position: absolute;
+    top: 30%;
+    left: 17%;
+    font-size: 78px;
+    font-family: Raleway;
+    color: #fff;
+    font-weight: 700;
+    z-index: -1;
+}
+.distribution{
+    display: flex;
+    align-items: center;
+}
+.distribution li{
+    color: #fff;
+    letter-spacing: .36px;
+    list-style-type: none;
+    position: relative;
+    margin-top: 30px;
+}
+.distribution li::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: -28px;
+    width: 10px;
+    height: 10px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.distribution li:first-child::before{
+    background-color: #00C3E2;
+}
+.distribution li:nth-child(2)::before{
+    background-color: #FF5644;
+}
+.distribution li:nth-child(3)::before{
+    background-color: #1CC327;
+}
+.accordion{
+    margin-top: 40px;
+}
+.accordion li{
+    display: inline;
+}
+.accordion a{
+    display: block;
+    background-color: #F8FAFF;
+    width: 100%;
+    cursor: pointer;
+    padding: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: Raleway;
+    font-weight: 700;
+}
+.accordion a:hover{
+    color: #0009b2!important;
+}
+.accordion a.active{
+    color: #0009b2!important;
+}
+.accordion a::after{
+    content: "";
+    width: 45px;
+    height: 45px;
+    float: right;
+    bottom: 10px;
+    background-color: #03179D;
+    position: relative;
+    border-radius: 30px;
+    background-image: url('../img/down-chevron.svg');
+    background-size: 25px 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.4s;
+}
+.accordion a.active::after{
+    transform: rotate(-180deg);
+}
+.accordion p{
+    display: none;
+    color: #777;
+    padding: 30px;
+}
+.accordion p.active{
+    display: block;
+}
 @media(max-width: 1450px){
     .tokens-market-background{
         left: -240px;
@@ -1170,6 +1268,16 @@ h2{
         left: -340px;
     }
 }
+@media (max-width: 1200px){
+    .about-us-total-sum{
+        font-size: 58px;
+    }
+    .chart-wrap{
+        width: 315px!important;
+        height: 315px!important;
+        position: relative!important;
+    }
+}
 @media(max-width: 1100px){
     .about-economy, .about-ico{
         flex-direction: column;
@@ -1273,6 +1381,16 @@ h2{
     }
     .tokens-market-table{
         margin: 0 50px;
+    }
+    .about-us-content{
+        padding-top: 100px;
+    }
+    .distribution-wrap {
+        margin-top: 50px;
+    }
+    .chart-complete{
+        display: flex;
+        justify-content: center;
     }
 }
 @media(max-width: 768px){
