@@ -41,6 +41,10 @@ body {
     top: 63%;
     right: -200px;
 }
+.tr-5 {
+    top: 66%;
+    left: -200px;
+}
 .header{
     background-image: url(../img/1.png);
     background-position: bottom center;
@@ -616,11 +620,12 @@ h2{
 .services img{
     position: absolute;
 }
-.services-content, .answers-content, .roadmap-content, .documents-content, .tokens-market-content, .about-us-content, .faq{
+.services-content, .answers-content, .roadmap-content, .documents-content, .tokens-market-content, .about-us-content, .faq, .team, .advisors,
+ .press{
     padding-top: 150px;
 }
 .services h4, .services h2, .answers h4, .answers h2, .roadmap-content h4, .roadmap-content h2, .documents-content h4, .documents-content h2, .about-us-content h4, .about-us-content h2,
-.faq h4, .faq h2{
+.faq h4, .faq h2, .team h4, .team h2, .advisors h4, .advisors h2, .press h4, .press h2{
     text-align: center;
 }
 .service-wrap{
@@ -668,7 +673,7 @@ h2{
     letter-spacing: -.4px;
     color: #333;
 }
-.service-body, .answer-body{
+.service-body, .answer-body, .team-member-body, .advisor-body{
     margin-top: 20px;
     font-size: 18px;
     max-width: 420px;
@@ -1076,8 +1081,12 @@ h2{
 .accordion{
     margin-top: 40px;
 }
+.accordion ul{
+    list-style-type: none;
+    padding: 0;
+}
 .accordion li{
-    display: inline;
+    margin-top: 20px;
 }
 .accordion a{
     display: block;
@@ -1090,6 +1099,7 @@ h2{
     line-height: 22px;
     font-family: Raleway;
     font-weight: 700;
+    position: relative;
 }
 .accordion a:hover{
     color: #0009b2!important;
@@ -1101,10 +1111,10 @@ h2{
     content: "";
     width: 45px;
     height: 45px;
-    float: right;
-    bottom: 10px;
+    top: 18px;
+    right: 30px;
     background-color: #03179D;
-    position: relative;
+    position: absolute;
     border-radius: 30px;
     background-image: url('../img/down-chevron.svg');
     background-size: 25px 12px;
@@ -1122,6 +1132,135 @@ h2{
 }
 .accordion p.active{
     display: block;
+}
+.team-member, .advisor{
+    margin-top: 30px;
+    padding: 30px;
+}
+.team-member a:hover, .advisor a:hover{
+    text-decoration: none;
+}
+.team-member-img:first-of-type, .advisor-img:first-of-type{
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgb(15 60 216 / 20%);
+    border-radius: 80px;
+    position: relative;
+}
+.team-member:nth-child(1) .team-member-img, .advisor:nth-child(1) .advisor-img{
+    background-image: url("../img/ava-1.png");
+}
+.team-member:nth-child(2) .team-member-img, .advisor:nth-child(2) .advisor-img{
+    background-image: url("../img/ava-2.png");
+}
+.team-member:nth-child(3) .team-member-img, .advisor:nth-child(3) .advisor-img{
+    background-image: url("../img/ava-3.png");
+}
+.team-member-img::after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    border-radius: 30px;
+    background-image: url('../img/linkedin.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: 0;
+    right: 0;
+    transition: transform .4s,-webkit-transform .4s;
+}
+.team-member:hover .team-member-img::after{
+    transform: scale(.95);
+}
+.team-member-title, .advisor-title{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #333;
+    font-family: Raleway;
+    font-weight: 700;
+}
+.team-member-subtitle, .advisor-subtitle{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 18px;
+    color: #333;
+    font-family: Catamaran, sans-serif;
+    font-weight: 400;
+}
+.team-member-body, .advisor-body{
+    text-align: center;
+    max-width: 100%;
+}
+.advisors{
+    margin-top: 100px;
+    background-image: url("../img/7.png");
+    background-position: bottom center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.advisors h2{
+    color: #fff!important;
+}
+.advisor-img{
+    box-shadow: 0 10px 32px #00c3e2;
+}
+.advisor-title, .advisor-subtitle, .advisor-body{
+    color: #fff;
+}
+.advisor-socials{
+    text-align: center;
+    margin-top: 20px;
+}
+.advisor-socials .social-link{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform .4s,-webkit-transform .4s;
+}
+.advisor-socials .social-link:hover{
+    transform: scale(.95);
+}
+.advisor-socials .social-linkedin{
+    background-image: url('../img/linkedin.svg');
+}
+.advisor-socials .social-google-plus{
+    background-image: url('../img/google-plus.svg');
+}
+.advisor-socials .social-facebook{
+    background-image: url('../img/facebook.svg');
+}
+.press-items{
+    margin-top: 50px;
+}
+.press-item{
+    margin-top: 30px;
+    text-align: center;
+    padding: 30px 40px 30px 40px;
+    box-shadow: 0 5px 15px rgb(15 60 216 / 5%);
+    transition: box-shadow .4s,-webkit-transform .4s;
+    min-height: 360px;
+}
+.press-item:hover{
+    box-shadow:0 5px 15px rgba(15,60,216,.15)
+}
+.press-item-body{
+    margin-top: 30px;
+    font-size: 18px;
+    position: relative;
+    line-height: 1.65;
+    font-family: Catamaran,sans-serif;
+    overflow-x: hidden;
+    color: #777;
 }
 @media(max-width: 1450px){
     .tokens-market-background{
@@ -1392,6 +1531,16 @@ h2{
         display: flex;
         justify-content: center;
     }
+    .team-member{
+        margin-top: 0px;
+        padding: 0px;
+    }
+    .advisors{
+        height: inherit;
+    }
+    .advisor{
+        margin-top: 0px;
+    }
 }
 @media(max-width: 768px){
     .sub-clock{
@@ -1417,6 +1566,9 @@ h2{
     .about-economy img, .about-ico img{
         width: 90%;
         height: 90%;
+    }
+    .accordion a{
+        padding: 30px 90px 30px 0px;
     }
 }
 @media(max-width: 576px){

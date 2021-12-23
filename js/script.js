@@ -117,10 +117,16 @@ $(document).ready(function(){
     });
     
     $(".accordion a").on('click', function(){
-        $(".accordion-link.active").removeClass("active");
-        $(".accordion-text.active").slideUp();
-        $(this).addClass("active");
-        $(this).next('p').slideToggle();
-        $(this).next('p').addClass("active");
+        if(!$(this).hasClass('active')){
+            $(".accordion-link.active").removeClass("active");
+            $(".accordion-text.active").slideUp();
+            $(this).addClass("active");
+            $(this).next('p').slideToggle();
+            $(this).next('p').addClass("active");
+        }
+        else{
+            $(".accordion-link.active").removeClass("active");
+            $(this).next('p').slideToggle();
+        }
     });
 });
