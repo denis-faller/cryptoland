@@ -31,7 +31,7 @@ body {
 }
 .tr-2 {
     top: 8%;
-    right: -200px;
+    right: 0px;
 }
 .tr-3 {
     top: 46%;
@@ -39,7 +39,7 @@ body {
 }
 .tr-4 {
     top: 63%;
-    right: -200px;
+    right: 0px;
 }
 .tr-5 {
     top: 66%;
@@ -621,11 +621,12 @@ h2{
     position: absolute;
 }
 .services-content, .answers-content, .roadmap-content, .documents-content, .tokens-market-content, .about-us-content, .faq, .team, .advisors,
- .press{
+ .press, .news, .footer .subscribe{
     padding-top: 150px;
 }
 .services h4, .services h2, .answers h4, .answers h2, .roadmap-content h4, .roadmap-content h2, .documents-content h4, .documents-content h2, .about-us-content h4, .about-us-content h2,
-.faq h4, .faq h2, .team h4, .team h2, .advisors h4, .advisors h2, .press h4, .press h2{
+.faq h4, .faq h2, .team h4, .team h2, .advisors h4, .advisors h2, .press h4, .press h2, .news h4, .news h2,
+.footer .subscribe{
     text-align: center;
 }
 .service-wrap{
@@ -816,6 +817,7 @@ h2{
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 .roadmap h2, .roadmap-header, .roadmap-date, .roadmap-body, .about-us h2{
     color: #fff!important;
@@ -962,6 +964,7 @@ h2{
     color: #333;
 }
 .tokens-market{
+    overflow: hidden;
     position: relative;
 }
 .tokens-market-background{
@@ -1204,7 +1207,7 @@ h2{
     width: 100%;
     height: 100%;
 }
-.advisors h2{
+.advisors h2, .footer .subscribe h2{
     color: #fff!important;
 }
 .advisor-img{
@@ -1239,7 +1242,7 @@ h2{
 .advisor-socials .social-facebook{
     background-image: url('../img/facebook.svg');
 }
-.press-items{
+.press-items, .news-items{
     margin-top: 50px;
 }
 .press-item{
@@ -1261,6 +1264,71 @@ h2{
     font-family: Catamaran,sans-serif;
     overflow-x: hidden;
     color: #777;
+}
+.news-item{
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    transition: box-shadow .4s,-webkit-transform .4s;
+    min-height: 400px;
+    background-color: #f8faff;
+}
+.news-item:hover{
+    box-shadow:0 5px 15px rgba(15,60,216,.15);
+}
+.news-items a:hover{
+    text-decoration: none;
+}
+.news-title{
+    font-size: 20px;
+    font-family: Raleway;
+    color: #313b77;
+    font-weight: 700;
+    margin: 20px;
+    min-height: 150px;
+}
+.news-date{
+    color: #777;
+    letter-spacing: .45px;
+}
+.footer{
+    background-image: url(../img/8.png);
+    background-position: header center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 667px;
+    margin-top: 100px;
+}
+.subscribe-form{
+    position: relative;
+}
+.subscribe-input{
+    width: 900px;
+    height: 80px;
+    border-radius: 50px;
+    padding: 20px;
+    margin-top: 20px;
+    outline: none;
+}
+.subscribe-button{
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 30px;
+    background-color: #03179D;
+    position: absolute;
+    right: 120px;
+    top: 40px;
+    background-image: url(../img/right-chevron-.svg);
+    background-size: 25px 12px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+.subscribe-button:hover{
+    background-color: #333333;
 }
 @media(max-width: 1450px){
     .tokens-market-background{
@@ -1416,6 +1484,12 @@ h2{
         height: 315px!important;
         position: relative!important;
     }
+    .news-item{
+        min-height: 500px;
+    }
+    .news-title{
+        min-height: 250px;
+    }
 }
 @media(max-width: 1100px){
     .about-economy, .about-ico{
@@ -1439,7 +1513,7 @@ h2{
         justify-content: flex-start;
     }
     .roadmap{
-        height: auto;
+        overflow-x: hidden;
     }
     .roadmap-content h2, .about-us h2{
         font-size: 30px!important;  
@@ -1541,6 +1615,12 @@ h2{
     .advisor{
         margin-top: 0px;
     }
+    .news-item{
+        min-height: 200px;
+    }
+    .news-title{
+        min-height: 100px;
+    }
 }
 @media(max-width: 768px){
     .sub-clock{
@@ -1569,6 +1649,9 @@ h2{
     }
     .accordion a{
         padding: 30px 90px 30px 0px;
+    }
+    .news-title{
+        min-height: 80px;
     }
 }
 @media(max-width: 576px){
