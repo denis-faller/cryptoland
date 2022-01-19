@@ -2,6 +2,13 @@
     font-family: Gilroy-Light;
     src: url(../fonts/Gilroy-Light.otf); 
 }
+@font-face{
+    font-family:fontello;
+    src:url(../fonts/fontello/fontello.eot);
+    src:url(../fonts/fontello/fontello.eot) format("embedded-opentype"),url(../fonts/fontello/fontello.woff) format("woff"),url(../fonts/fontello/fontello.ttf) format("truetype"),url(../fonts/fontello/fontello.svg) format("svg");
+    font-weight:400;
+    font-style:normal;
+}
 ::selection {
     color: #fff;
     background: #FFA500;
@@ -30,20 +37,28 @@ body {
     left: -200px;
 }
 .tr-2 {
-    top: 8%;
+    top: 5%;
     right: 0px;
 }
 .tr-3 {
-    top: 46%;
+    top: 32%;
     left: -300px;
 }
 .tr-4 {
-    top: 63%;
+    top: 40%;
     right: 0px;
 }
 .tr-5 {
-    top: 66%;
+    top: 69%;
     left: -200px;
+}
+.tr-6 {
+    top: 81%;
+    left: 0;
+}
+.tr-7 {
+    top: 51%;
+    left: 0;
 }
 .header{
     background-image: url(../img/1.png);
@@ -964,7 +979,6 @@ h2{
     color: #333;
 }
 .tokens-market{
-    overflow: hidden;
     position: relative;
 }
 .tokens-market-background{
@@ -1001,13 +1015,13 @@ h2{
 }
 .bg-el-1 {
     position: absolute;
-    top: 5%;
+    top: 20%;
     right: 20%;
 }
 .bg-el-2 {
     position: absolute;
-    bottom: -20%;
-    left: 10%;
+    bottom: -15%;
+    left: 15%;
 }
 .bg-el-3 {
     position: absolute;
@@ -1016,7 +1030,7 @@ h2{
 }
 .bg-el-4{
     position: absolute;
-    top: 90%;
+    top: 78%;
     left: 20%;
 }
 .about-us{
@@ -1297,14 +1311,21 @@ h2{
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 667px;
+    height: 727px;
     margin-top: 100px;
+}
+.subscribe{
+    border-bottom: 1px solid rgba(86,91,215,.4);
+    padding-bottom: 50px;
+}
+.subscribe-content{
+    margin: 0 auto;
 }
 .subscribe-form{
     position: relative;
 }
 .subscribe-input{
-    width: 900px;
+    width: 100%;
     height: 80px;
     border-radius: 50px;
     padding: 20px;
@@ -1318,7 +1339,7 @@ h2{
     border-radius: 30px;
     background-color: #03179D;
     position: absolute;
-    right: 120px;
+    right: 20px;
     top: 40px;
     background-image: url(../img/right-chevron-.svg);
     background-size: 25px 12px;
@@ -1329,6 +1350,81 @@ h2{
 }
 .subscribe-button:hover{
     background-color: #333333;
+}
+.footer-title{
+    font-size: 20px;
+    color: #fff;
+    font-family: Raleway;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.footer-content{
+    margin-top: 20px;
+}
+.footer-content .footer-menu{
+    margin-top: 30px;
+    list-style-type: none;
+    padding: 0;
+}
+.footer-content .footer-menu li{
+    padding: 7px;
+}
+.footer-content .footer-menu a {
+    color: #f8faff;
+    opacity: .5;
+    transition: opacity 0.4s;
+}
+.footer-content .footer-menu a:hover{
+    text-decoration: none;
+    opacity: 1;
+}
+.footer-social{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 0;
+    float: left;
+    list-style-type: none;
+}
+.footer-social li:first-of-type{
+    padding-left: 0px;
+}
+.footer-social li{
+    padding-left: 8px;
+}
+.footer-content .social-link{
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 25px;
+    position: relative;
+    transition: opacity 0.4s;
+    opacity: 1;
+}
+.footer-content .social-link:hover{
+    opacity: .5;
+}
+.fontello-icon {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    color: #03179d;
+    font-family: fontello;
+    font-style: normal;
+    font-weight: 400;
+    speak: none;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+}
+.icon-facebook{
+    padding-left: 4px;
+}
+.icon-bitcoin{
+    padding-left: 3px;
 }
 @media(max-width: 1450px){
     .tokens-market-background{
@@ -1547,6 +1643,26 @@ h2{
     .roadmap-row:last-of-type .roadmap-body{
         position: relative;
     }
+    .footer{
+        height: inherit;
+    }
+    .logo-wrap{
+        justify-content: center;
+    }
+    .footer-menu-wrap{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    .footer-title{
+        margin-bottom: 5px;
+    }
+    .footer-content .footer-menu{
+        margin-top: 15px;
+    }
+    .footer-content .footer-menu li{
+        text-align: center;
+    }
 }
 @media(max-width: 992px){
     .stat-info-item{
@@ -1652,6 +1768,23 @@ h2{
     }
     .news-title{
         min-height: 80px;
+    }
+    .logo-wrap{
+        justify-content: flex-start;
+    }
+    .footer-menu-wrap{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .footer-title{
+        margin-bottom: 5px;
+    }
+    .footer-content .footer-menu{
+        margin-top: 15px;
+    }
+    .footer-content .footer-menu li{
+        text-align: inherit;
     }
 }
 @media(max-width: 576px){
